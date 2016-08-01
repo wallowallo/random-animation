@@ -1,0 +1,11 @@
+#hello {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  background-color: red;
+  left: 5px; top: 5px;
+}
+#button {
+  position: absolute;
+  top: 45px;
+}
