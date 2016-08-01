@@ -1,23 +1,35 @@
 var merp = document.getElementById("hello")
-console.log("hello");
-console.log(merp);
 
 merp.style.width = "200px";
 
 var length = 1;
+var height = 1;
 var interval = 100; //value in miliseconds
 
 function myRepeatingInterval () {
 	length = length + 1;
-	//console.log(length);
-	merp.style.width = length + "px"
+	height = height + 1;
+	if (length < 50) {
+		merp.style.width = length + "px"
+		//console.log(length);
+	} else if (length == 50) {
+		length = 1;
+	}
+	if (height < 100) {
+	merp.style.height = height + "px"
+	//console.log(height);
+} else if (height == 100) {
+	height = 1;
+	length = 25;
+	}
 }
 setInterval(myRepeatingInterval, interval);
 
 
 var btn = document.getElementById("button")
 
-window.reset = function reset() {
+function reset() {
 	console.log(length)
 	length = 1;
+	height = 1;
 }
