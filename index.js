@@ -1,21 +1,21 @@
+
+var myInterval = setInterval(myRepeatingInterval, interval);
 var merp = document.getElementById("hello")
-
-
 var length = 1;
 var height = 1;
-var slider = document.getElementById("slider");
 var interval = 10;
-slider.addEventListener("change", function() {
-  interval = slider.value;
-})
+var slider = document.getElementById("slider");
+setInterval(function() {
+  interval = slider.value;}, 10)
 
-function myRepeatingInterval () {
+function myRepeatingInterval() {
+  clearInterval(myInterval);
 	length = length + 1;
 	height = height + 1;
 	if (length < 50) {
 		merp.style.width = length + "px"
 		//console.log(length);
-	} else if (length >= 50 && length <=100) {
+	} else if (length >= 50 && length <= 100) {
 		merp.style.backgroundColor= "blue";
 		merp.style.top = "220px"
 		merp.style.left = "75px"
@@ -31,7 +31,7 @@ function myRepeatingInterval () {
 		merp.style.height = height + "px"
 		merp.style.backgroundColor = "green"
 		//console.log(height);
-	} else if (height >= 50 && height <=100) {
+	} else if (height >= 50 && height <= 100) {
 		merp.style.left = "100px"
 		merp.style.top = "0px"
 		merp.style.height = height + "px"
@@ -41,16 +41,18 @@ function myRepeatingInterval () {
 		merp.style.backgroundColor= "red";
 		height = 1;
 		length = 25;
-}
+	}
 }
 
-var btn = document.getElementById("reset")
 
-function reset() {
-	console.log(length)
-	length = 1;
-	height = 1;
-	merp.style.top = "0";
-	merp.style.left = "0";
-	clearInterval(myRepeatingInterval, 2000);
-}
+ function runThis() {
+   var myInterval = setInterval(myRepeatingInterval, interval);
+ }
+  function reset() {
+    clearInterval(myInterval);
+    interval = null;
+     length = 1;
+     height = 1;
+     merp.style.top = "0";
+     merp.style.left = "0";
+  }
