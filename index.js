@@ -1,8 +1,13 @@
 var merp = document.getElementById("hello")
 
+
 var length = 1;
 var height = 1;
-var interval = document.getElementById('slider') //value in miliseconds
+var slider = document.getElementById("slider");
+var interval = 10;
+slider.addEventListener("change", function() {
+  interval = slider.value;
+})
 
 function myRepeatingInterval () {
 	length = length + 1;
@@ -47,4 +52,5 @@ function reset() {
 	height = 1;
 	merp.style.top = "0";
 	merp.style.left = "0";
+	clearInterval(myRepeatingInterval, 2000);
 }
