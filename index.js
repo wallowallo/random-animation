@@ -1,10 +1,8 @@
 var merp = document.getElementById("hello")
 
-merp.style.width = "200px";
-
 var length = 1;
 var height = 1;
-var interval = 50; //value in miliseconds
+var interval = 30; //value in miliseconds
 
 function myRepeatingInterval () {
 	length = length + 1;
@@ -12,26 +10,41 @@ function myRepeatingInterval () {
 	if (length < 50) {
 		merp.style.width = length + "px"
 		//console.log(length);
-	} else if (length == 50) {
-		length = 1;
+	} else if (length >= 50 && length <=100) {
 		merp.style.backgroundColor= "blue";
+		merp.style.top = "220px"
+		merp.style.left = "75px"
+		merp.style.width = length + "px"
+	} else {
+		merp.style.top = "100px"
+		merp.style.left = "0"
+		length = 1;
+		height = 12;
 	}
-	if (height < 100) {
-	merp.style.height = height + "px"
-	//console.log(height);
-} else if (height == 100) {
-	height = 1;
-	length = 25;
-	merp.style.backgroundColor= "red";
-	}
+
+	if (height < 50) {
+		merp.style.height = height + "px"
+		merp.style.backgroundColor = "green"
+		//console.log(height);
+	} else if (height >= 50 && height <=100) {
+		merp.style.left = "100px"
+		merp.style.top = "0px"
+		merp.style.height = height + "px"
+	} else {
+		merp.style.left = "200px"
+		merp.style.top = "150px"
+		merp.style.backgroundColor= "red";
+		height = 1;
+		length = 25;
 }
-setInterval(myRepeatingInterval, interval);
+}
 
-
-var btn = document.getElementById("button")
+var btn = document.getElementById("reset")
 
 function reset() {
 	console.log(length)
 	length = 1;
 	height = 1;
+	merp.style.top = "0";
+	merp.style.left = "0";
 }
