@@ -2,7 +2,7 @@ var merp = document.getElementById("hello")
 
 var length = 1;
 var height = 1;
-var interval = 30; //value in miliseconds
+var interval = document.getElementById('slider') //value in miliseconds
 
 function myRepeatingInterval () {
 	length = length + 1;
