@@ -1,8 +1,10 @@
 #container {
+  box-shadow: 5px 5px 20px 5px;
+  border-radius: 5px;
   width: 250px;
   height: 250px;
   position: relative;
-  background: yellow;
+  background: white;
   overflow: hidden;
 }
 #hello {
@@ -14,13 +16,17 @@
 }
 #start {
   position: absolute;
-  top: 10px; left: 320px;
+  top: 10px; left: 300px;
 }
 #reset {
   position: absolute;
-  top: 10px; left: 370px;
+  top: 10px; left: 345px;
 }
 #slider {
   position: absolute;
-  top: 30px; left: 320px;
+  top: 30px; left: 300px;
+}
+#stop {
+  position: absolute;
+  top: 10px; left: 395px;
 }
